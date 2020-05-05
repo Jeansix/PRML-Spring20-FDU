@@ -7,10 +7,10 @@ def gen_data_batch(batch_size, start, end):
         start: start number
         end: end number
     '''
-    numbers_1 = np.random.randint(start, end, batch_size,dtype='int64')
-    numbers_2 = np.random.randint(start, end, batch_size,dtype='int64')
-    results = np.add(numbers_1,numbers_2,dtype='int64')
-    return np.array(numbers_1,dtype='int64'), np.array(numbers_2,dtype='int64'), np.array(results,dtype='int64')
+    numbers_1 = np.random.randint(start, end, batch_size)
+    numbers_2 = np.random.randint(start, end, batch_size)
+    results = np.add(numbers_1,numbers_2)
+    return np.array(numbers_1), np.array(numbers_2), np.array(results)
 
 def gen_great_data_batch(batch_size, numdigit):
     '''sample a mini-batch with the digit length numdigit
@@ -20,9 +20,9 @@ def gen_great_data_batch(batch_size, numdigit):
     '''
     numbers_1 = [int("".join(np.random.randint(0,10,numdigit).astype('str'))) for d_i in range(batch_size)]
     numbers_2 = [int("".join(np.random.randint(0,10,numdigit).astype('str'))) for d_i in range(batch_size)]
-    results = np.add(numbers_1,numbers_2,dtype='int64')
+    results = np.add(numbers_1,numbers_2)
  
-    return np.array(numbers_1,dtype='int64'), np.array(numbers_2,dtype='int64'), np.array(results,dtype='int64')
+    return np.array(numbers_1), np.array(numbers_2), np.array(results)
 
 
 def reverseDigits(digitNums):
