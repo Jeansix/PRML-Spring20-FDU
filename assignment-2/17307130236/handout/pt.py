@@ -128,7 +128,6 @@ def evaluate(model):
     Nums1, Nums2, results = prepare_batch(*datas, maxlen=9)
     with torch.no_grad():
         logits = model(torch.tensor(Nums1), torch.tensor(Nums2))
-    print(logits.type())
     logits = logits.numpy()
     pred = np.argmax(logits, axis=-1)
     res = results_converter(pred)
@@ -144,7 +143,6 @@ def my_evaluate(model, batch_size, numdigit):
     Nums1, Nums2, results = prepare_batch(*datas, maxlen=numdigit+2)
     with torch.no_grad():
         logits = model(torch.tensor(Nums1), torch.tensor(Nums2))
-    print(logits.type())
     logits = logits.numpy()
     pred = np.argmax(logits, axis=-1)
     res = results_converter(pred)
