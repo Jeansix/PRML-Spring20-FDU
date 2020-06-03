@@ -221,7 +221,7 @@ covs = [cov1, cov2, cov3]
 ns = [30, 70, 60]
 filename = 'my.data'
 
-# gen_dataset(3,mus,covs,ns,filename)
+gen_dataset(3,mus,covs,ns,filename)
 data, labels = load_dataset(filename)
 # data = scale_data(data)
 show_scatter(data, ns)
